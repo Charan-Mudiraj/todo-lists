@@ -84,6 +84,3 @@ app.post('/presentList', function(req, res){
 app.listen(process.env.PORT, function(){
   console.log("Started the Server at Port: 3000");
 });
-app.listen(27017, function(){
-  console.log("Started the DataBase at Port: 27017");
-});
