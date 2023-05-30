@@ -1,0 +1,19 @@
+<%-include("header")-%>
+  <body>
+    <header><h1 class="top-card">ToDo Lists !</h1></header>
+    <div class="box">
+      <form action="/newList" method="post">
+        <input type="text" name="page_title" placeholder="New List" autocomplete="off">
+        <button type="submit" id='addButton'>+</button>
+      </form>
+  <%    for(let i=0; i<list.length; i++){  %>
+        <form action="/presentList" method="post">
+          <div class="item">
+              <button type="submit" class="list-btn" name="btn" value="<%=list[i].page_title%>"><%=list[i].page_title%></button>
+              <button type="submit" name="delete" id="deleteButton" value="<%=list[i].page_title%>">🗑</button>
+          </div>
+        </form>
+<%      }  %>
+    </div>
+  </body>
+<%-include("footer")-%>

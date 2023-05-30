@@ -1,0 +1,28 @@
+
+<%-include("./header")-%>
+  <body>
+    <div class="box" id="heading">
+      <h1><%=header%></h1>
+    </div>
+    <div class="box">
+      <%  for(let i=0; i<item.length; i++){ %>
+        <form action="/delete" method="post">
+          <div class="item">
+              <input name="item" type="checkbox" value="<%=item[i].item%>">
+              <p><%=item[i].item%></p>
+              <button type="submit" name="page_title" id="delButton" value="<%=btn%>">Delete</button>
+          </div>
+        </form>
+
+        <%  } %>
+
+      <form class="item" action="/add" method="post">
+        <input type="text" name="item" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="page_title" id="addButton" value="<%=btn%>">+</button>
+      </form>
+    </div>
+    <form action="/" method="post">
+      <button type="submit" class="list-btn home-btn">Home</button>
+    </form>
+  </body>
+<%-include("./footer")-%>
