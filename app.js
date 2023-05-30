@@ -81,7 +81,7 @@ app.post('/presentList', function(req, res){
 });
 
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, function(){
   console.log("Started the Server at Port: 3000");
 });
 app.listen(27017, function(){
