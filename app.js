@@ -5,8 +5,9 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
-const url = "mongodb+srv://admin-charan:admindb@cluster0.36di8nj.mongodb.net";
-mongoose.connect(url + "/todoDB", {useNewUrlParser: true});
+// const url = "mongodb+srv://admin-charan:admindb@cluster0.36di8nj.mongodb.net";
+const url = "mongodb://127.0.0.1:27017";
+mongoose.connect(url + "/todoDB");
 
 const schema = new mongoose.Schema({
   page_title: String,
@@ -81,6 +82,9 @@ app.post('/presentList', function(req, res){
 });
 
 
-app.listen(process.env.PORT, function(){
-  console.log("Started the Server at Envoronmental Port.");
+app.listen(process.env.PORT && 3000, function(){
+  console.log("Started the Server at Port 3000 and Envoronmental Port.");
 });
+// app.listen(3000, function(){
+//   console.log("Started the Server at Port 3000.");
+// });

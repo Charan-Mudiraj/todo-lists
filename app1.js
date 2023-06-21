@@ -7,8 +7,6 @@ const app = express();
 
 app.use(express.static("public"));
 
-let names = mongodb.db.listCollections();
-console.log(names);
 
 app.listen(3000, function(){
   console.log("Started the Server at Port: 3000");
