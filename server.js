@@ -5,8 +5,6 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
-const url =
-  "mongodb+srv://charan_mudiraj:0000@cluster0.tw7xzmm.mongodb.net/todos";
 // const url = "mongodb://127.0.0.1:27017";
 mongoose.connect(url);
 
