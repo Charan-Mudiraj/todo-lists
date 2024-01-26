@@ -3,10 +3,11 @@ const bodyParser = require("body-parser");
 const date = require("./date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const dotenv = require("dotenv");
 
 const app = express();
-// const url = "mongodb://127.0.0.1:27017";
-mongoose.connect(url);
+dotenv.config();
+mongoose.connect(process.env.MONGODB_URL);
 
 const schema = new mongoose.Schema({
   page_title: String,
@@ -79,6 +80,6 @@ app.post("/presentList", function (req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log("Started the Server at Port 3000.");
+app.listen(process.env.PORT, function () {
+  console.log("Started the Server at Port: " + process.env.PORT);
 });
