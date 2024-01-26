@@ -13,4 +13,4 @@ Simpel todos app with with add/delete collections of todos and add/delete/mark_d
 1. Collections Page
    ![alt](./media/1.png)
 2. Todos Page
-   ![alt](./media/2.png)
+   ![alt](./media/3.png)
